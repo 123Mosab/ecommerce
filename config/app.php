@@ -56,6 +56,8 @@ return [
 
     'asset_url' => env('ASSET_URL', null),
 
+    'Route'     => "Illuminate\Support\Facades\Route",
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

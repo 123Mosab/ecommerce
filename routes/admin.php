@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\LoginController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +15,7 @@ use App\Http\Controllers\Dashboard\LoginController;
 */
 
 
-Route::group(['namespace' => 'Dashboard' , 'middleware' => 'auth:admin'] ,function (){ 
+Route::middleware('auth:admin')->group(function (){ 
 
          Route::get('users', function (){
 
@@ -26,8 +26,8 @@ Route::group(['namespace' => 'Dashboard' , 'middleware' => 'auth:admin'] ,functi
   
       });
 
- Route::group(['namespace' => 'Dashboard'] , function (){ 
+ Route::middleware('guest:admin')->group(function (){ 
          
-         Route::get('/login', [LoginController::class, 'login'])->name('admin.login');
+         Route::get('login', [LoginController::class, 'login'])->name('admin.login');
  
       });

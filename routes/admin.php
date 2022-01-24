@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\LoginController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,17 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:admin')->group(function (){ 
 
-         Route::get('users', function (){
+         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-         return 'in admin';
-         
-       });
        
   
       });
 
  Route::middleware('guest:admin')->group(function (){ 
          
-         Route::get('login', [LoginController::class, 'login'])->name('admin.login');
+         Route::get('login', [LoginController::class, 'login'])->name('login');
+         Route::post('login', [LoginController::class, 'PostLogin'])->name('post.login');
+
  
       });

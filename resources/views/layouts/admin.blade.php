@@ -73,6 +73,7 @@
 <!-- End sidebar -->
 
 <!-- Begin content-->
+@yield('content')
 <!-- End content-->
 
 <!-- Begin footer-->

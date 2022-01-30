@@ -25,7 +25,7 @@ class LoginController extends Controller
 
          if(auth()->guard('admin')->attempt(['email' => $request->input("email"), 'password' => $request->input("password")], $remember_me))
          {
-             return redirect()->route('admin.dashboard');
+             return redirect()->route('dashboard');
          }
          
          return redirect()->back()->with(['error' => 'هناك  خطأ في البيانات']);

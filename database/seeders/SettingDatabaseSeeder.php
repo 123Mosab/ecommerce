@@ -27,10 +27,10 @@ class SettingDatabaseSeeder extends Seeder
            'outer_shipping_cost' => 0,
            'free_shipping_cost' => 0,
            'translatable' => [
-               'store_name' => 'Mosab store',
-               'free_shipping_label' => 'Free shipping',
-               'local_label' => 'local shipping',
-               'outer_label' => 'outer shipping',
+               'store_name' => 'متجر مصعب',
+               'free_shipping_label' => 'توصيل مجاني',
+               'local_label' => 'توصيل داخلي',
+               'outer_label' => 'توصيل خارجي',
            ],
         ]);
     }

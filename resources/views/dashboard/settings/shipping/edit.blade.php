@@ -38,7 +38,7 @@
     <div class="card-content collapse show">
         <div class="card-body">
             <form class="form" action="{{route('update.shipping.method',$shippingMethod-> id)}}"
-                    method="POST"
+                    method="post"
                     enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -48,11 +48,11 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="projectinput1">{{__('admin/shipping.name')}}</label>
-                                <input type="text" value="{{$shippingMethod -> value}}" id="name"
+                                <input type="text" value="{{$shippingMethod->value}}" id="value"
                                         class="form-control"
                                         placeholder="  "
-                                        name="name">
-                                @error("name")
+                                        name="value">
+                                @error("value")
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
                             </div>

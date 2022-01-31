@@ -34,9 +34,9 @@ class SettingsController extends Controller
 
         try{
 
-            DB::beginTransaction();
-
             $shipping_method = Setting::find($id);
+
+            DB::beginTransaction();
 
             $shipping_method->update(['plain_value' => $request->plain_value]);
 
@@ -52,7 +52,7 @@ class SettingsController extends Controller
 
             return redirect()->back()->with(['error' => __('admin/shipping.error')]);
 
-            DB::rollBack();
+            DB::rollback();
 
         }
        

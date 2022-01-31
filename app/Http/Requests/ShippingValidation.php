@@ -25,8 +25,8 @@ class ShippingValidation extends FormRequest
     {
         return [
             'id' => 'required|exists:settings',
-            'plain_value' => 'required',
-            'value' => 'nullable|numeric',
+            'plain_value' => 'nullable|numeric',
+            'value' => 'required',
         ];
     }
 }
